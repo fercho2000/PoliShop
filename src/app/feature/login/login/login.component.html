@@ -1,22 +1,40 @@
-<div class="container my-5">
-    <div class="row justify-content-center">
-      <div class="col-sm-6 col-md-4">
+<div class="container-fluid">
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-4 col-md-6 col-sm-8 col-10">
         <div class="card">
+          <div class="card-header bg-primary text-light text-center">
+            <h3 class="fw-bold mb-0">Iniciar Sesión</h3>
+          </div>
           <div class="card-body">
-            <h5 class="card-title mb-4">Iniciar sesión</h5>
             <form>
-              <div class="mb-3">
-                <label for="emailInput" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="emailInput" placeholder="tu-correo@ejemplo.com" required>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control form-control-lg" id="floatingInput" placeholder="Correo electrónico">
+                <label for="floatingInput">Correo electrónico</label>
               </div>
-              <div class="mb-3">
-                <label for="passwordInput" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="passwordInput" placeholder="********" required>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control form-control-lg" id="floatingPassword" placeholder="Contraseña">
+                <label for="floatingPassword">Contraseña</label>
               </div>
-              <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-primary btn-lg">Iniciar sesión</button>
+              <div class="d-flex justify-content-center mb-3">
+                <button type="submit" class="btn btn-primary btn-lg">Iniciar Sesión</button>
               </div>
             </form>
+            <div class="text-center mb-3">
+              <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <div class="text-center mb-3">
+                <span class="text-muted">O inicia sesión con</span>
+              </div>
+              <div class="d-grid gap-2 mb-3">
+                <img src="https://about.fb.com/wp-content/uploads/2022/03/social_fb.png" alt="Iniciar sesión con Facebook">
+
+                <a href="#" class="ms-3"><i class="fab fa-google fa-2x"></i></a>
+              </div>
+            <!-- <div class="d-flex justify-content-center">
+              <a href="#" class="me-3"><i class="fab fa-facebook fa-2x"></i></a>
+              <a href="#" class="ms-3"><i class="fab fa-google fa-2x"></i></a>
+            </div> -->
           </div>
         </div>
       </div>
