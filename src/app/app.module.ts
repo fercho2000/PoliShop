@@ -7,6 +7,7 @@ import { HomeContentModule } from './feature/home/home-content.module';
 import { LoginModule } from './feature/login/login.module';
 import { HomeComponent } from './shared/home/home.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { CoreModule } from './core';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     HomeContentModule,
     LoginModule,
     AppRoutingModule,
