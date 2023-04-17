@@ -1,74 +1,571 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Polishop - Administrador</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.ts"></script>
+  <meta charset="UTF-8">
+  <title>Administrador de Supermercado</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-    <header>
-        <h1>Polishop - Administrador</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Usuario: Juan Pérez</a></li>
-                <li>
-                    <a href="#">Menú</a>
-                    <ul id="menu-dropdown">
-                        <li><a href="#">Información general</a></li>
-                        <li><a href="#">Reporte de ventas</a></li>
-                        <li><a href="#">Reporte de compras</a></li>
-                        <li><a href="#">Inventario</a></li>
-                        <li><a href="#">Calendario de actividades</a></li>
-                        <li><a href="#">Nómina</a></li>
-                        <li><a href="#">Proveedores</a></li>
-                        <li><a href="#">Legal</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Cerrar sesión</a></li>
-            </ul>
-        </nav>
-    </header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Bienvenido!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#Reporte de ventas">Reporte de ventas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Reporte de compras">Reporte de compras</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Inventario">Inventario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Cronograma de actividades">Cronograma de actividades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Nómina">Nómina</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Proveedores">Proveedores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Legal">Legal</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <main>
-        <section>
-            <h2>Información general</h2>
-            <p>Aquí encontrarás información general sobre la empresa, como su historia, misión, visión, valores, etc.</p>
-        </section>
+  <div class="container">
+    <section id="Reporte de ventas">
+        <h1>Reporte de ventas</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Producto 1</td>
+              <td>10</td>
+              <td>$100</td>
+            </tr>
+            <tr>
+              <td>Producto 2</td>
+              <td>5</td>
+              <td>$50</td>
+            </tr>
+            <tr>
+                <td>Producto 3</td>
+                <td>8</td>
+                <td>$80</td>
+              </tr>
+            </tbody>
+        </table>           
+  </div>
+</section>
 
-        <section>
-            <h2>Reporte de ventas</h2>
-            <p>En esta sección se mostrarán los reportes de ventas de la empresa, con información detallada sobre los productos vendidos, el número de ventas, el ingreso total, etc.</p>
-        </section>
+  <div class="container">
+    <section id="Reporte de compras">
+    <h1>Reporte de compras</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio unitario</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Producto 1</td>
+          <td>20</td>
+          <td>$5</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>Producto 2</td>
+          <td>10</td>
+          <td>$2</td>
+          <td>$20</td>
+        </tr>
+        <tr>
+          <td>Producto 3</td>
+          <td>15</td>
+          <td>$3</td>
+          <td>$45</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-        <section>
-            <h2>Reporte de compras</h2>
-            <p>En esta sección se mostrarán los reportes de compras de la empresa, con información detallada sobre los proveedores, los productos comprados, el costo total, etc.</p>
-        </section>
+  <div class="container">
+    <section id="Inventario">
+    <h1>Inventario</h1>
+    <ul>
+      <li>Producto 1 - 50 unidades</li>
+      <li>Producto 2 - 20 unidades</li>
+      <li>Producto 3 - 30 unidades</li>
+    </ul>
+  </div>
+  
+<div class="container">
+</section>
 
-        <section>
-            <h2>Inventario</h2>
-            <p>En esta sección se mostrará el inventario de la empresa, con información detallada sobre los productos disponibles, los productos agotados, los productos próximos a vencer, etc.</p>
-        </section>
+  <title>Calendario de reuniones</title>
+  <section id="Calendario de reuniones">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+</head>
+<body>
+  
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+  <script>
+    $(function() {
+      $("#calendario").fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,agendaWeek,agendaDay'
+        },
+        events: [
+          {
+            title: 'Reunión de equipo',
+            start: '2023-04-25T10:00:00',
+            end: '2023-04-25T11:00:00'
+          },
+          {
+            title: 'Capacitación en ventas',
+            start: '2023-04-28T14:00:00',
+            end: '2023-04-28T16:00:00'
+          },
+          {
+            title: 'Revisión de inventario',
+            start: '2023-04-30T09:00:00',
+            end: '2023-04-30T10:00:00'
+          }
+        ]
+      });
+    });
+  </script>
+</body>
+</section>
 
-        <section>
-            <h2>Calendario de actividades</h2>
-            <p>En esta sección se mostrará el calendario de actividades de la empresa, con información detallada sobre las reuniones, los eventos, las fechas de entrega, etc.</p>
-        </section>
+<section id="Cronograma de actividades">
+<h1>Cronograma de actividades </h1>
 
-        <section>
-            <h2>Nómina</h2>
-            <p>En esta sección se mostrará la información de la nómina de la empresa, con detalles sobre los empleados, sus salarios, sus prestaciones, etc.</p>
-        </section>
+    <div id="calendario"></div>
 
-        <section>
-            <h2>Proveedores</h2>
-            <p>En esta sección se mostrará información sobre los proveedores de la empresa, con detalles sobre sus productos, sus precios, sus condiciones de pago, etc.</p>
-        </section>
 
-    </section>
-        <h2>Legal</h2>
-        <p>En esta sección se mostrará información legal sobre la empresa, como sus términos y condiciones, su política de privacidad, sus políticas de devolución, etc.</p>
-    </section>
-</main>
+    <form>
+        <div class="form-group">
+          <label for="titulo">Título del evento:</label>
+          <input type="text" class="form-control" id="titulo" name="titulo">
+        </div>
+        <div class="form-group">
+          <label for="fecha_inicio">Fecha y hora de inicio:</label>
+          <input type="datetime-local" class="form-control" id="fecha_inicio" name="fecha_inicio">
+        </div>
+        <div class="form-group">
+          <label for="fecha_fin">Fecha y hora de finalización:</label>
+          <input type="datetime-local" class="form-control" id="fecha_fin" name="fecha_fin">
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar evento</button>
+      </form>
+      
+   
+    <script>
+        $(function() {
+          var eventos = [
+            {
+              title: 'Reunión de equipo',
+              start: '2023-04-25T10:00:00',
+              end: '2023-04-25T11:00:00'
+            },
+            {
+              title: 'Capacitación en ventas',
+              start: '2023-04-28T14:00:00',
+              end: '2023-04-28T16:00:00'
+            },
+            {
+              title: 'Revisión de inventario',
+              start: '2023-04-30T09:00:00',
+              end: '2023-04-30T10:00:00'
+            }
+          ];
+          
+          $("#calendario").fullCalendar({
+            header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'month,agendaWeek,agendaDay'
+            },
+            events: eventos
+          });
+          
+          $("form").submit(function(event) {
+            event.preventDefault();
+            
+            var titulo = $("#titulo").val();
+            var fecha_inicio = moment($("#fecha_inicio").val());
+            var fecha_fin = moment($("#fecha_fin").val());
+            
+            var evento = {
+              title: titulo,
+              start: fecha_inicio,
+              end: fecha_fin
+            };
+            
+            $("#calendario").fullCalendar('addEventSource', [evento]);
+            
+            $("#titulo").val('');
+            $("#fecha_inicio").val('');
+            $("#fecha_fin").val('');
+          });
+        });
+      </script>
+</div>
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+</section>
+
+<section id="Nómina">
+         <p><h1>Nómina</h1></p>
+  <div class="container">
+    <h1 class="text-center mt-4 mb-4">Tabla de empleados</h1>
+
+    <table class="table table-hover table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Número de identificación</th>
+          <th>Horario</th>
+          <th>Cargo</th>
+          <th>Salario</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Juan Pérez</td>
+          <td>123456789</td>
+          <td>Lunes a Viernes de 9am a 5pm</td>
+          <td>Asistente Administrativo</td>
+          <td>$1,000.000</td>
+          <td><button class="btn btn-danger">Eliminar</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>María González</td>
+          <td>987654321</td>
+          <td>Lunes a Sábado de 2pm a 10pm</td>
+          <td>Cajero</td>
+          <td>$800.000</td>
+          <td><button class="btn btn-danger">Eliminar</button></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>José García</td>
+          <td>456789123</td>
+          <td>Lunes a Domingo de 6am a 2pm</td>
+          <td>Gerente de Ventas</td>
+          <td>$1,500.000</td>
+          <td><button class="btn btn-danger">Eliminar</button></td>
+        </tr>
+        <!-- Agregar más filas para más empleados -->
+      </tbody>
+    </table>
+
+    <h2 class="text-center mt-4 mb-4">Agregar nuevo empleado</h2>
+
+    <form>
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre">
+      </div>
+      <div class="form-group">
+        <label for="identificacion">Número de identificación:</label>
+        <input type="text" class="form-control" id="identificacion">
+      </div>
+      <div class="form-group">
+        <label for="horario">Horario:</label>
+        <input type="text" class="form-control" id="horario">
+      </div>
+      <div class="form-group">
+        <label for="cargo">Cargo:</label>
+        <input type="text" class="form-control" id="cargo">
+      </div>
+      <div class="form-group">
+        <label for="salario">Salario:</label>
+        <input type="text" class="form-control" id="salario">
+      </div>
+      <button type="submit" class="btn
+      btn-primary">Agregar</button>
+</form>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</section>
+
+<section id="Proveedores">
+<h1>Proveedores </h1>
+
+  <title>Registro de Proveedores</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container my-4">
+    <h1>Registro de Proveedores</h1>
+    <hr>
+
+    <!-- Formulario para agregar proveedores -->
+    <div class="card mb-4">
+      <div class="card-header bg-primary text-white">
+        Agregar Proveedor
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre del Proveedor:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="celular" class="form-label">Número de Celular:</label>
+            <input type="tel" class="form-control" id="celular" name="celular" required>
+          </div>
+          <div class="mb-3">
+            <label for="marca" class="form-label">Marca que Distribuye:</label>
+            <input type="text" class="form-control" id="marca" name="marca" required>
+          </div>
+          <div class="mb-3">
+            <label for="dias" class="form-label">Días de Pedido:</label>
+            <input type="text" class="form-control" id="dias" name="dias" required>
+          </div>
+          <button type="submit" class="btn btn-success">Agregar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Tabla de proveedores -->
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        Proveedores Registrados
+      </div>
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Número de Celular</th>
+              <th>Marca que Distribuye</th>
+              <th>Días de Pedido</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Proveedor 1</td>
+              <td>1234567890</td>
+              <td>Marca 1</td>
+              <td>Lunes, Miércoles, Viernes</td>
+              <td>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+                <button type="button" class="btn btn-secondary">Editar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Proveedor 2</td>
+              <td>0987654321</td>
+              <td>Marca 2</td>
+              <td>Martes, Jueves, Sábado</td>
+              <td>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+                <button type="button" class="btn btn-secondary">Editar</button>
+              </td>
+            </tr>
+            <!-- Filas de proveedores aquí -->
+          </tbody>
+        </table>
+      </div>
+      <div class="container">
+        <h2>Registro de proveedores</h2>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Número de celular</th>
+              <th>Marca que distribuye</th>
+              <th>Días de pedido</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Proveedor 1</td>
+              <td>1234567890</td>
+              <td>Marca 1</td>
+              <td>Lunes, Miércoles, Viernes</td>
+              <td>
+                <button class="btn btn-sm btn-warning">Editar</button>
+                <button class="btn btn-sm btn-danger">Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Proveedor 2</td>
+              <td>0987654321</td>
+              <td>Marca 2</td>
+              <td>Martes, Jueves, Sábado</td>
+              <td>
+                <button class="btn btn-sm btn-warning">Editar</button>
+                <button class="btn btn-sm btn-danger">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>Agregar nuevo proveedor</h3>
+        <form>
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre">
+          </div>
+          <div class="form-group">
+            <label for="celular">Número de celular:</label>
+            <input type="text" class="form-control" id="celular">
+          </div>
+          <div class="form-group">
+            <label for="marca">Marca que distribuye:</label>
+            <input type="text" class="form-control" id="marca">
+          </div>
+          <div class="form-group">
+            <label for="dias">Días de pedido:</label>
+            <input type="text" class="form-control" id="dias">
+          </div>
+          <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
+      </div>
+
+      <title>Legal</title>
+	<!-- Enlace al archivo CSS de Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+</section>
+
+<section id="Legal">
+	<div class="container">
+		<h1>Legal</h1>
+
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Misión</h2>
+				<p>Aquí va la misión de la empresa</p>
+			</div>
+			<div class="col-md-6">
+				<h2>Visión</h2>
+				<p>Aquí va la visión de la empresa</p>
+			</div>
+		</div>
+
+		<h2>Archivos</h2>
+
+		<form method="post" action="" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="ruta-evacuacion">Ruta de evacuación</label>
+				<input type="file" class="form-control-file" id="ruta-evacuacion" name="ruta-evacuacion">
+			</div>
+			<div class="form-group">
+				<label for="permisos">Permisos</label>
+				<input type="file" class="form-control-file" id="permisos" name="permisos">
+			</div>
+			<div class="form-group">
+				<label for="planos">Planos</label>
+				<input type="file" class="form-control-file" id="planos" name="planos">
+			</div>
+			<button type="submit" class="btn btn-primary">Cargar archivos</button>
+		</form>
+
+	</div>
+
+	<!-- Enlace al archivo JS de Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html><title>Legal</title>
+	<!-- Enlace al archivo CSS de Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="container">
+		<h1>Legal</h1>
+
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Misión</h2>
+				<p>Aquí va la misión de la empresa</p>
+			</div>
+			<div class="col-md-6">
+				<h2>Visión</h2>
+				<p>Aquí va la visión de la empresa</p>
+			</div>
+		</div>
+
+		<h2>Archivos</h2>
+
+		<form method="post" action="" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="ruta-evacuacion">Ruta de evacuación</label>
+				<input type="file" class="form-control-file" id="ruta-evacuacion" name="ruta-evacuacion">
+			</div>
+			<div class="form-group">
+				<label for="permisos">Permisos</label>
+				<input type="file" class="form-control-file" id="permisos" name="permisos">
+			</div>
+			<div class="form-group">
+				<label for="planos">Planos</label>
+				<input type="file" class="form-control-file" id="planos" name="planos">
+			</div>
+			<button type="submit" class="btn btn-primary">Cargar archivos</button>
+		</form>
+
+	</div>
+</section>
+
+
+	<!-- Enlace al archivo JS de Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+
+  <!-- Importar JS de Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
