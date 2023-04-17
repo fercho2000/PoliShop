@@ -1,57 +1,93 @@
 <div class="container-fluid">
-  <div class="row justify-content-center mt-5" style="margin-top: 4rem;">
-    <div class="col-lg-4 col-md-6 col-sm-8 col-10">
-      <div class="card" style="margin-top: 2rem;">
-
-        <div class="card-header bg-primary text-light text-center">
-          <h3 class="fw-bold mb-0">Iniciar Sesión</h3>
-        </div>
-        <div class="card-body">
-      
-
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control form-control-lg" id="email" formControlName="email">
-              <label for="email">Correo electrónico</label>
-              <div *ngIf="control['email'].touched && control['email'].invalid" class="alert alert-danger">
-                <div *ngIf="control['email'].errors && control['email'].errors['required']">El correo electrónico es obligatorio</div>
-                <div *ngIf="control['email'].errors  && !control['email'].errors['required']">El correo electrónico no es válido</div>
-            </div>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control form-control-lg" id="password" formControlName="password">
-              <label for="password">Contraseña</label>
-              <div *ngIf="control['password'].touched && control['password'].invalid" class="alert alert-danger">
-                <div *ngIf="control['password'].errors && control['password'].errors['required']">La contraseña es obligatoria</div>
-             
-            </div>
-            </div>
-            <div class="d-flex justify-content-center mb-3">
-              <button type="submit" class="btn btn-light btn-lg fw-bold" [disabled]="!loginForm.valid">Iniciar Sesión</button>
-            </div>
-          </form>
-          
-          <div class="text-center mb-3">
-            <a href="#">¿Olvidaste tu contraseña?</a>
-          </div>
-          <hr class="border-top" style="border-width: 3px; ">
-          <div class="text-center mb-3">
-            <span class="text-dark fw-bold">O inicia sesión con</span>
-          </div>
-          <div class="text-center">
-            <img
-              src="assets/images/logo-facebook.png"
-              alt="Iniciar sesión con Facebook"
-              class="mx-3 my-3 d-inline-block"
+  <div class="card-header text-dark text-center">
+    <h3 class="fw-bold mb-0">Inicio De Sesión</h3>
+  </div>
+  <div class="row justify-content-center mt-5" style="margin-top: 4rem">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+      <div class="" style="margin-top: 2rem">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control form-control-lg"
+              id="email"
+              formControlName="email"
             />
-            <img
-              src="assets/images/logo-gmail.png"
-              alt="Iniciar sesión con Gmail"
-              class="mx-3 my-3 d-inline-block"
-            />
+            <label for="email" class="form-label">Correo electrónico</label>
+            <div
+              *ngIf="control['email'].touched && control['email'].invalid"
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  control['email'].errors && control['email'].errors['required']
+                "
+              >
+                El correo electrónico es obligatorio
+              </div>
+              <div
+                *ngIf="
+                  control['email'].errors &&
+                  !control['email'].errors['required']
+                "
+              >
+                El correo electrónico no es válido
+              </div>
+            </div>
           </div>
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              class="form-control form-control-lg"
+              id="password"
+              formControlName="password"
+            />
+            <label for="password">Contraseña</label>
+            <div
+              *ngIf="control['password'].touched && control['password'].invalid"
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  control['password'].errors &&
+                  control['password'].errors['required']
+                "
+              >
+                La contraseña es obligatoria
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center mb-3">
+            <button
+              type="submit"
+              class="btn btn-light btn-lg fw-bold"
+              [disabled]="!loginForm.valid"
+            >
+              Iniciar Sesión
+            </button>
+          </div>
+        </form>
+
+        <div class="text-center mb-3">
+          <a href="#">¿Olvidaste tu contraseña?</a>
         </div>
       </div>
+    </div>
+    <hr class="border-top" style="border-width: 3px" />
+    <div class="text-center mb-3">
+      <span class="text-dark fw-bold">O inicia sesión con</span>
+    </div>
+    <div class="text-center">
+      <img
+        src="assets/images/logo-facebook.png"
+        alt="Iniciar sesión con Facebook"
+        class="mx-3 my-3 d-inline-block"
+      />
+      <img
+        src="assets/images/logo-gmail.png"
+        alt="Iniciar sesión con Gmail"
+        class="mx-3 my-3 d-inline-block"
+      />
     </div>
   </div>
 </div>

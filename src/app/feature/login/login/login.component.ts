@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  Validators
-} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -31,10 +26,6 @@ export class LoginComponent implements OnInit {
       this.authServise.buscarUsuario().subscribe((data) => {
         console.log('data que llega ', data);
       });
-
-      // Portal del cliente
-      // Nombre clave	Nombre	Clave API	Creado
-      // api-poli-shop	JOSE FERNANDO USUGA FLOREZ	aKh055W4PjWR8ek8ovaSkd	04/11/2023 21:22
     }
   }
 }
