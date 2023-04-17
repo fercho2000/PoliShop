@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 
+
 @Component({
-  selector: 'app-root',
+  selector: 'app-clientes',
   templateUrl: './clientes.component.html',
   styleUrls: ['./clientes.component.css']
 })
 
-export class AppComponent {
+export class ClientesComponent {
   title:string = 'poliShop_Clientes';
   msg:string = ''; 
 
