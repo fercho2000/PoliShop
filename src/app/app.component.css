@@ -1,0 +1,41 @@
+.icon{
+    font-size: 2rem
+}
+.menu-header-item{
+    font-size: 1.3rem;
+}
+
+.img-product{
+    width: inherit;
+}
+
+details{
+    background-color: #6C757D;
+    color: white;
+    border-radius: 10px;
+}
+
+details > ul {
+    list-style: none;
+}
+
+summary{
+    list-style: none;
+}
+
+.btn-primary{
+    background-color: #FF6600;
+    border: none;
+}
+
+.btn-secondary{
+    background-color: #293357;
+}
+
+.accordion-button{
+    background-color:#6C757D ;
+    color: white;
+    outline: none;
+    box-shadow: none;
+}
+
