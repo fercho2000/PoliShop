@@ -167,13 +167,13 @@
     <div id="calendario"></div>
 
   
-    <!-- Agregar los estilos de Bootstrap -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- Agregar los scripts de jQuery y Bootstrap -->
+  
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- Agregar los estilos personalizados -->
+    
     <style>
         .table td, .table th {
             vertical-align: middle;
@@ -196,7 +196,7 @@
 <body>
     <div class="container my-5">
         <h1 class="text-center mb-4">Cronograma de actividades</h1>
-        <!-- Agregar el botón "Agregar evento" -->
+       
         <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#agregarEventoModal">Agregar evento</button>
         <div class="table-responsive">
             <table class="table table-bordered">
@@ -218,13 +218,13 @@
                         <td>Almuerzo con el equipo de desarrollo</td>
                         <td>12:30 PM - 2:00 PM</td>
                     </tr>
-                    <!-- Agregar más reuniones aquí -->
+                    
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- Agregar el formulario modal para agregar eventos -->
+    
     <div class="modal fade" id="agregarEventoModal" tabindex="-1" role="dialog" aria-labelledby="agregarEventoModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -258,19 +258,19 @@
         </div>
     </div>
     
-    <!-- Agregar el script de jQuery para manejar el formulario modal -->
+    
     <script>
         $(document).ready(function() {
-            // Manejar el botón "Guardar"
+            
             $("#guardarEvento").click(function() {
-                // Obtener los valores de los campos del formulario
+                
                 var fecha = $("#fecha").val();
                 var reunion = $("#reunion").val();
                 var hora = $("#hora").val();
-                // Crear una nueva fila en la tabla con los valores ingresados
+                
                 var nuevaFila = "<tr><td>" + fecha + "</td><td>" + reunion + "</td><td>" + hora + "</td></tr>";
                 $("table tbody").append(nuevaFila);
-                // Limpiar los campos del formulario y cerrar el modal
+                
                 $("#fecha").val("");
                 $("#reunion").val("");
                 $("#hora").val("");
@@ -331,7 +331,7 @@
           <td>$1,500.000</td>
           <td><button class="btn btn-danger">Eliminar</button></td>
         </tr>
-        <!-- Agregar más filas para más empleados -->
+        
       </tbody>
     </table>
 
@@ -381,7 +381,7 @@
     <h1>Registro de Proveedores</h1>
     <hr>
 
-    <!-- Formulario para agregar proveedores -->
+    
     <div class="card mb-4">
       <div class="card-header bg-primary text-white">
         Agregar Proveedor
@@ -409,7 +409,7 @@
       </div>
     </div>
 
-    <!-- Tabla de proveedores -->
+   
     <div class="card">
       <div class="card-header bg-primary text-white">
         Proveedores Registrados
@@ -446,7 +446,7 @@
                 <button type="button" class="btn btn-secondary">Editar</button>
               </td>
             </tr>
-            <!-- Filas de proveedores aquí -->
+            
           </tbody>
         </table>
       </div>
@@ -509,7 +509,7 @@
       </div>
 
       <title>Legal</title>
-	<!-- Enlace al archivo CSS de Bootstrap -->
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
@@ -550,14 +550,14 @@
 
 	</div>
 
-	<!-- Enlace al archivo JS de Bootstrap -->
+	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html><title>Legal</title>
-	<!-- Enlace al archivo CSS de Bootstrap -->
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
@@ -598,7 +598,7 @@
 </section>
 
 
-	<!-- Enlace al archivo JS de Bootstrap -->
+	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -606,7 +606,7 @@
 
 
 
-  <!-- Importar JS de Bootstrap -->
+  
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
