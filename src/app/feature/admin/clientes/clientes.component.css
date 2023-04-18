@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
  /* Damos un poco de estilo al contenedor */
 .app{
     padding: 30px;
@@ -8,3 +9,14 @@
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
 }
+=======
+.app{
+    border-radius: 4px    ;
+    -webkit-border-radius: 4px    ;
+    -moz-border-radius: 4px    ;
+    -ms-border-radius: 4px    ;
+    -o-border-radius: 4px    ;
+    margin-top: 20px;
+    padding: 30px;
+}
+>>>>>>> Stashed changes
