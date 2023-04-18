@@ -11,7 +11,7 @@ export class AuthService {
 
   buscarUsuario() {
     const requestObject = {
-      search: [[{ a: 'dcKar6B8nmykBcSmoeogqH', b: 'jose@gmail.com', o: 'is' }]],
+      search: [[{ a: 'dcKar6B8nmykBcSmoeogqH', b: 'dummyUser@gmail.com', o: 'is' }]],
     };
     return this.http.post(this.apiUrl, requestObject);
   }
