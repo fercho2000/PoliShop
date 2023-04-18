@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { ClientesComponent } from './feature/admin/clientes/clientes.component';
-import { HomeContentComponent } from './feature/home/home-content/home-content.component';
+import { HomeContentComponent } from './pages/home/home-content/home-content.component';
 import { ProveedoresComponent } from './feature/admin/proveedores/proveedores.component';
 import { ProductosComponent } from './feature/admin/productos/productos.component';
 
