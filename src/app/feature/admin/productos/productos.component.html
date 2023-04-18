@@ -1,0 +1,197 @@
+<!-- Los comentarios del componente "Clientes" aplican igual-->
+
+
+  <div class="container app bg-secondary bg-opacity-10">
+  
+    <div class="row">
+      <div class="col-sm-8">
+        <h1 class="text-md-start p-2">
+          {{title}}
+        </h1>
+      </div>
+      <div class="col-sm-4 alert alert-primary alert-dismissible  fade show" *ngIf = "msg">
+          <p href=" #"
+           class="close"
+           style="text-decoration: none;" 
+           (click)="closeAlert()">
+           {{msg}}
+          </p>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <img width = "250" src="./assets/PoliShop.png" alt="" class="img-fluid">
+      </div>
+      <div class="col-sm-8">
+        <h2>Crear Datos:</h2>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="code" class="control-label-sm-2">
+              Código
+            </label>
+            <div class="col-sm-10">
+              <input type="text"
+              class="form-control"
+              id="code"
+              name="code"
+              [(ngModel)]= "model.code"
+              placeholder="Ingrese el código">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="product" class="control-label-sm-2">
+              Producto
+            </label>
+            <div class="col-sm-10">
+              <input type="text"
+              class="form-control"
+              id="product"
+              name="product"
+              [(ngModel)]= "model.product"
+              placeholder="Ingrese el producto">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price" class="control-label-sm-2">
+              Precio
+            </label>
+            <div class="col-sm-10">
+              <input type="text"  
+              class="form-control"
+              id="price"
+              name="price"
+              [(ngModel)]= "model.price"
+              placeholder="Ingrese el precio">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="stock" class="control-label-sm-2">
+              Existencia
+            </label>
+            <div class="col-sm-10">
+              <input type="text"
+              class="form-control"
+              id="stock"
+              name="stock"
+              [(ngModel)]= "model.stock"
+              placeholder="Ingrese la existencia">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+              <button type="submit"
+              class="btn btn-success m-2"
+              (click)="addProduct()">
+                Grabar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>Datos: </h2>
+        <table class="table table-bordered col-sm">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Existencia</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products; let i = index">
+              <td>{{product.code}}</td>
+              <td>{{product.product}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.stock}}</td>
+              <td>
+                <a (click)="editProduct(i)"
+                  class="btn btn-success m-2">
+                  Editar
+                </a>
+                <a (click)="deleteProduct(i)"
+                  class="btn btn-danger m-2">
+                  Borrar
+                </a>
+              </td >           
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class=" modal-body col-sm-4" [hidden]="hideUpdate">
+        <h2>Actualizar Datos:</h2>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="code" class="control-label-sm-2">
+              Código
+            </label>
+            <div class="col-sm-10">
+              <input type="text"
+              class="form-control"
+              id="code"
+              name="code"
+              [(ngModel)]= "model2.code"
+              placeholder="Entre un nuevo código">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="product" class="control-label-sm-2">
+              Producto
+            </label>
+            <div class="col-sm-10">
+              <input type="text"
+              class="form-control"
+              id="product"
+              name="product"
+              [(ngModel)]= "model2.product"
+              placeholder="Entre un nuevo producto">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price" class="control-label-sm-2">
+              Precio
+            </label>
+            <div class="col-sm-10">
+              <input type="text"  
+              class="form-control"
+              id="price"
+              name="price"
+              [(ngModel)]= "model2.price"
+              placeholder="Entre un nuevo precio">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="stock" class="control-label-sm-2">
+              Existencia
+            </label>
+            <div class="col-sm-10">
+              <input type="text"
+              class="form-control"
+              id="stock"
+              name="stock"
+              [(ngModel)]= "model2.stock"
+              placeholder="Entre la existencias">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+              <button type="submit"
+              class="btn btn-success m-2"
+              (click)="updateProduct()"
+              [hidden]="hideUpdate">
+              Grabar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+   </div>
+  </div>
+ 
+  

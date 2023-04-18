@@ -9,20 +9,24 @@ import { Component } from '@angular/core';
 
 export class ClientesComponent {
   title:string = 'poliShop_Clientes';
-  msg:string = ''; 
+  msg:string = '';  // Utilizamos la variable "msg" como activador de la alerta.
 
+  // Realizamos un array de objetos donde estan los datos de los clientes.
   employees = [
-    {'name': 'Rick','surname': 'Mira', 'email': 'rick@email.com'},
-    {'name': 'John','surname': 'Palma', 'email': 'john@email.com'},
-    {'name': 'Steve','surname': 'Bush', 'email': 'steve@email.com'}
+    {'name': 'Rick','surname': 'Mira', 'email': 'rick@mail.com'},
+    {'name': 'John','surname': 'Palma', 'email': 'john@mail.com'},
+    {'name': 'Steve','surname': 'Bush', 'email': 'steve@mail.com'},
+    {'name': 'David','surname': 'Brown', 'email': 'brown@mail.com'},
+
   ];
 
+  // Los modelos creados reciben los datos ingresados en los formularios.
   model:any = {}; 
   model2:any = {};
   myValue!: number; 
-  hideUpdate:boolean  = true;
+  hideUpdate:boolean  = true; // Con esta variable manejamos la desaparición del formulario para actualizar.
 
-
+  // Aqui se exponen los diferentes métodos para manejar los datos.
   addEmployee():void {
     this.employees.push(this.model);
     this.msg = 'Campo agregado';   

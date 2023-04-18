@@ -1,7 +1,9 @@
 <header class="fixed-top">
+
+  <!-- Primera barra de navegación (parte superior) -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid px-5">
-      <a class="navbar-brand mx-auto" href="#">Logo</a>
+    <div class="container-fluid px-5 ">
+      <img src="./assets/PoliShop.png" alt="" width="30px" class="me-50">
       <button
         class="navbar-toggler"
         type="button"
@@ -15,7 +17,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav w-100">
-          <form class="d-flex px-auto mx-auto w-auto" role="search">
+          <form class="d-flex px-auto mx-auto w-25" role="search">
             <input
               class="form-control"
               type="search"
@@ -39,6 +41,8 @@
       </div>
     </div>
   </nav>
+
+  <!-- Segunda barra de navegación (parte inferior) -->
   <nav class="navbar navbar-expand-lg navbar-light bg-secondary text-wh75">
     <div class="container-fluid bg-secondary px-5">
       <a class="navbar-brand text-light" href="#">poliShop</a>
@@ -55,15 +59,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav w-100">
-          <li class="nav-item dropdown w-auto px-auto mx-auto">
+          <li class="nav-item  px-auto mx-auto" text-light>
+            <a class="nav-link active text-light" aria-current="page" href="#"
+              >Inicio</a>
+          <li class="nav-item dropdown w-25 px-auto mx-auto">
             <a
               class="nav-link dropdown-toggle text-light"
               href="#"
               id="navbarDropdownMenuLink"
               role="button"
               data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+              aria-expanded="false">
+
               Categorías
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -75,17 +82,7 @@
               <li><a class="dropdown-item" href="#">Pescados</a></li>
             </ul>
           </li>
-          <li class="nav-item w-auto px-auto mx-auto" text-light>
-            <a class="nav-link active text-light" aria-current="page" href="#"
-              >Inicio</a
-            >
-          </li>
-          <li class="nav-item w-auto px-auto mx-auto">
-            <a class="nav-link text-light" href="#">Carnes, Pollo y Pescados</a>
-          </li>
-          <li class="nav-item w-auto px-auto mx-auto">
-            <a class="nav-link text-light" href="#">Frutas y Verduras</a>
-          </li>
+        
           <li class="nav-item w-auto px-auto mx-auto">
             <a class="nav-link text-light" href="#">Ofertas</a>
           </li>
@@ -100,10 +97,10 @@
             >
               Administración
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Productos</a></li>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
+              <li><a class="dropdown-item" href="/productos">Productos</a></li>
               <li><a class="dropdown-item" href="/clientes">Clientes</a></li>
-              <li><a class="dropdown-item" href="#">Proveedores</a></li>
+              <li><a class="dropdown-item" href="/proveedores">Proveedores</a></li>
             </ul>
           </li>
         </ul>
@@ -112,6 +109,7 @@
   </nav>
 </header>
 
+<!-- Cuerpo principal (carrusel con imagenes de productos) -->
 <main class="bg-dark">
   <div class="container-sm w-100">
     <div
@@ -187,6 +185,7 @@
   </div>
 </main>
 
+<!-- Pie de página con información de la compañia -->
 <footer>
   <div class="container-fluid">
     <div class="row p-5 py-2 bg-secondary text-white">
@@ -277,4 +276,4 @@
   </div>
 </footer>
 
-<!-- </body> -->
+
