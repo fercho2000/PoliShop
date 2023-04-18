@@ -109,143 +109,186 @@
 
   <div class="container">
     <section id="Inventario">
-    <h1>Inventario</h1>
-    <ul>
-      <li>Producto 1 - 50 unidades</li>
-      <li>Producto 2 - 20 unidades</li>
-      <li>Producto 3 - 30 unidades</li>
-    </ul>
-  </div>
-  
-<div class="container">
-</section>
-
-  <title>Calendario de reuniones</title>
-  <section id="Calendario de reuniones">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+        
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-  
-  
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-  <script>
-    $(function() {
-      $("#calendario").fullCalendar({
-        header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month,agendaWeek,agendaDay'
-        },
-        events: [
-          {
-            title: 'Reunión de equipo',
-            start: '2023-04-25T10:00:00',
-            end: '2023-04-25T11:00:00'
-          },
-          {
-            title: 'Capacitación en ventas',
-            start: '2023-04-28T14:00:00',
-            end: '2023-04-28T16:00:00'
-          },
-          {
-            title: 'Revisión de inventario',
-            start: '2023-04-30T09:00:00',
-            end: '2023-04-30T10:00:00'
-          }
-        ]
-      });
-    });
-  </script>
+  <div class="container">
+    <h1>Inventario</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Producto 1</td>
+          <td>10</td>
+          <td>$50</td>
+          <td>
+            <button class="btn btn-primary">Agregar</button>
+            <button class="btn btn-danger">Quitar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Producto 2</td>
+          <td>5</td>
+          <td>$30</td>
+          <td>
+            <button class="btn btn-primary">Agregar</button>
+            <button class="btn btn-danger">Quitar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Producto 3</td>
+          <td>20</td>
+          <td>$70</td>
+          <td>
+            <button class="btn btn-primary">Agregar</button>
+            <button class="btn btn-danger">Quitar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
+</html>
+
 </section>
 
 <section id="Cronograma de actividades">
-<h1>Cronograma de actividades </h1>
-
     <div id="calendario"></div>
 
-
-    <form>
-        <div class="form-group">
-          <label for="titulo">Título del evento:</label>
-          <input type="text" class="form-control" id="titulo" name="titulo">
-        </div>
-        <div class="form-group">
-          <label for="fecha_inicio">Fecha y hora de inicio:</label>
-          <input type="datetime-local" class="form-control" id="fecha_inicio" name="fecha_inicio">
-        </div>
-        <div class="form-group">
-          <label for="fecha_fin">Fecha y hora de finalización:</label>
-          <input type="datetime-local" class="form-control" id="fecha_fin" name="fecha_fin">
-        </div>
-        <button type="submit" class="btn btn-primary">Agregar evento</button>
-      </form>
-      
-   
-    <script>
-        $(function() {
-          var eventos = [
-            {
-              title: 'Reunión de equipo',
-              start: '2023-04-25T10:00:00',
-              end: '2023-04-25T11:00:00'
-            },
-            {
-              title: 'Capacitación en ventas',
-              start: '2023-04-28T14:00:00',
-              end: '2023-04-28T16:00:00'
-            },
-            {
-              title: 'Revisión de inventario',
-              start: '2023-04-30T09:00:00',
-              end: '2023-04-30T10:00:00'
-            }
-          ];
-          
-          $("#calendario").fullCalendar({
-            header: {
-              left: 'prev,next today',
-              center: 'title',
-              right: 'month,agendaWeek,agendaDay'
-            },
-            events: eventos
-          });
-          
-          $("form").submit(function(event) {
-            event.preventDefault();
-            
-            var titulo = $("#titulo").val();
-            var fecha_inicio = moment($("#fecha_inicio").val());
-            var fecha_fin = moment($("#fecha_fin").val());
-            
-            var evento = {
-              title: titulo,
-              start: fecha_inicio,
-              end: fecha_fin
-            };
-            
-            $("#calendario").fullCalendar('addEventSource', [evento]);
-            
-            $("#titulo").val('');
-            $("#fecha_inicio").val('');
-            $("#fecha_fin").val('');
-          });
-        });
-      </script>
-</div>
-
-
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+    <!-- Agregar los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Agregar los scripts de jQuery y Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Agregar los estilos personalizados -->
+    <style>
+        .table td, .table th {
+            vertical-align: middle;
+        }
+        .table thead th {
+            text-align: center;
+        }
+        .table tbody tr td:first-child {
+            width: 15%;
+        }
+        .table tbody tr td:nth-child(2) {
+            width: 60%;
+        }
+        .table tbody tr td:last-child {
+            width: 25%;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Cronograma de actividades</h1>
+        <!-- Agregar el botón "Agregar evento" -->
+        <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#agregarEventoModal">Agregar evento</button>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Reunión</th>
+                        <th>Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>23 de Abril</td>
+                        <td>Reunión con el equipo de ventas</td>
+                        <td>10:00 AM - 11:00 AM</td>
+                    </tr>
+                    <tr>
+                        <td>28 de Abril</td>
+                        <td>Almuerzo con el equipo de desarrollo</td>
+                        <td>12:30 PM - 2:00 PM</td>
+                    </tr>
+                    <!-- Agregar más reuniones aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Agregar el formulario modal para agregar eventos -->
+    <div class="modal fade" id="agregarEventoModal" tabindex="-1" role="dialog" aria-labelledby="agregarEventoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="agregarEventoModalLabel">Agregar evento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="fecha">Fecha</label>
+                            <input                          type="date" class="form-control" id="fecha">
+                        </div>
+                        <div class="form-group">
+                            <label for="reunion">Reunión</label>
+                            <input type="text" class="form-control" id="reunion">
+                        </div>
+                        <div class="form-group">
+                            <label for="hora">Hora</label>
+                            <input type="time" class="form-control" id="hora">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="guardarEvento">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Agregar el script de jQuery para manejar el formulario modal -->
+    <script>
+        $(document).ready(function() {
+            // Manejar el botón "Guardar"
+            $("#guardarEvento").click(function() {
+                // Obtener los valores de los campos del formulario
+                var fecha = $("#fecha").val();
+                var reunion = $("#reunion").val();
+                var hora = $("#hora").val();
+                // Crear una nueva fila en la tabla con los valores ingresados
+                var nuevaFila = "<tr><td>" + fecha + "</td><td>" + reunion + "</td><td>" + hora + "</td></tr>";
+                $("table tbody").append(nuevaFila);
+                // Limpiar los campos del formulario y cerrar el modal
+                $("#fecha").val("");
+                $("#reunion").val("");
+                $("#hora").val("");
+                $("#agregarEventoModal").modal("hide");
+            });
+        });
+    </script>
+    
+
+
+    
 </section>
 
+
 <section id="Nómina">
-         <p><h1>Nómina</h1></p>
+         
   <div class="container">
+    <h1>Nómina</h1>
     <h1 class="text-center mt-4 mb-4">Tabla de empleados</h1>
 
     <table class="table table-hover table-striped">
