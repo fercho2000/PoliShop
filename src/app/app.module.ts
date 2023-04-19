@@ -1,42 +1,40 @@
+import { SharedModule } from './shared/shared.module';
+import { AuthService } from './pages/login/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeContentModule } from './pages/home/home-content.module';
-import { LoginModule } from './feature/login/login.module';
-import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { CoreModule } from './core';
-import { ClientesComponent } from './feature/admin/clientes/clientes.component';
-import { ProveedoresComponent } from './feature/admin/proveedores/proveedores.component';
-import { FormsModule } from '@angular/forms';
-import { HomeContentComponent } from './pages/home/home-content/home-content.component';
-import { ProductosComponent } from './feature/admin/productos/productos.component';
-
+import { ProveedoresComponent } from './pages/admin/proveedores/proveedores.component';
+import { ClientesComponent } from './pages/admin/clientes/clientes.component';
+import { ProductosComponent } from './pages/admin/productos/productos.component';
+import { DetalleProductoComponent } from './pages/detalle-producto/detalle-producto.component';
+import { HomeContentComponent } from './pages/home/home-content.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // Declaramos todos los componentes que creamos
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     HomeContentComponent,
-    PageNotFoundComponent,
-    ClientesComponent,
+    DetalleProductoComponent,
     ProveedoresComponent,
+    ClientesComponent,
     ProductosComponent
-
-
   ],
 
   // Importamos los módulos creados y el módulo "FormsModule"
   imports: [
+    SharedModule,
     BrowserModule,
-    CoreModule,
-    HomeContentModule,
-    LoginModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

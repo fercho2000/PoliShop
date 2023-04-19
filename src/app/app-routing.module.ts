@@ -1,20 +1,17 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-import { ClientesComponent } from './feature/admin/clientes/clientes.component';
-import { HomeContentComponent } from './pages/home/home-content/home-content.component';
-import { ProveedoresComponent } from './feature/admin/proveedores/proveedores.component';
-import { ProductosComponent } from './feature/admin/productos/productos.component';
+import { LoginComponent } from './pages/login/login.component';
+import { HomeContentComponent } from './pages/home/home-content.component';
+import { DetalleProductoComponent } from './pages/detalle-producto/detalle-producto.component';
 
-// Creamos una constante "routes" y accedemos al metodo "Routes" de Angular para
-// comunicar todos los demas componentes con el "home"
+
 const routes: Routes = [
-  {
-    path: 'home', component: HomeContentComponent
-  },
-  {
-    path: '**', pathMatch: 'full', redirectTo: 'home'
-  }
+  { path: '', pathMatch: 'full', redirectTo: '/home' },
+
+  { path: 'home', component: HomeContentComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'detalle-producto', component: DetalleProductoComponent }
+
 ];
 
 
