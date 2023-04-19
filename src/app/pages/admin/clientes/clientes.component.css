@@ -1,0 +1,10 @@
+ /* Damos un poco de estilo al contenedor */
+.app{
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}

@@ -26,13 +26,10 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/app/app.component.css",
                 "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-                "node_modules/bootstrap/dist/js/bootstrap.min.js",
-                "node_modules/popper.js/dist/umd/popper.min.js"
+                "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -100,5 +97,12 @@
         }
       }
     }
+  },
+  "cli": {
+<<<<<<< Updated upstream
+    "analytics": false
+=======
+    "analytics": "857b30a0-8f46-461f-be3e-7265c5317cb3"
+>>>>>>> Stashed changes
   }
 }

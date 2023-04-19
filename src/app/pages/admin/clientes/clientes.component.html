@@ -1,0 +1,141 @@
+<!-- Creamos un contenedor con donde estara todo nuestro "html" -->
+<div class="container app bg-secondary bg-opacity-10">
+
+  <div class="row"> <!-- Se crea un "div" con el atributo "row" para que los elementos se dispongan horizontalmente-->
+    <div class="col-sm-8">
+      <h1 class="text-md-start p-2">
+        {{title}} <!-- Accedemos al titulo utilizando "interpolación" de Angular -->
+      </h1>
+    </div>
+
+    <!-- Creeamos una "Alerta" y accedemos al método "closeAlert()" para cerrarla -->
+    <div class="col-sm-4 alert alert-primary alert-dismissible  fade show" *ngIf="msg">
+      <!-- Con el atributo "*ngIf" le decimo que solo ejecute la alerta si se genera un "msg" -->
+      <p href=" #" class="close" style="text-decoration: none;" (click)="closeAlert()">
+        {{msg}} <!-- Accedemos a la variable "msg" utilizando "interpolación" de Angular -->
+      </p>
+    </div>
+  </div>
+
+  <!-- En esta sección accedemos al formulario para "Crear datos" -->
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <img width="250" src="./assets/PoliShop.png" alt="" class="img-fluid">
+    </div>
+    <div class="col-sm-8">
+      <h2>Crear Datos:</h2>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="name" class="control-label-sm-2">
+            Nombres
+          </label>
+          <div class="col-sm-10">
+            <!-- En este input hacemos un "binding" bidireccional para acceder a los atributos globales de "ngModel" -->
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model.name"
+              placeholder="Ingrese el nombre(s)">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="surname" class="control-label-sm-2">
+            Apellidos
+          </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="surname" name="surname" [(ngModel)]="model.surname"
+              placeholder="Ingrese los apellidos">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="control-label-sm-2">
+            Email
+          </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="email" name="email" [(ngModel)]="model.email"
+              placeholder="Ingrese un Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-10 col-sm-offset-2">
+            <button type="submit" class="btn btn-success m-2" (click)="addEmployee()">
+              <!-- Utilizamos el evento (click) de Angular para acceder al metodo "addEmployee()" y grabar -->
+              Grabar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sección donde se muestra en una tabla los datos de los clientes -->
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>Datos: </h2>
+      <table class="table table-bordered col-sm">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees; let i = index">
+            <td>{{employee.name}}</td>
+            <td>{{employee.surname}}</td>
+            <td>{{employee.email}}</td>
+            <td>
+              <a (click)="editEmployee(i)" class="btn btn-success m-2">
+                Editar
+              </a>
+              <a (click)="deleteEmployee(i)" class="btn btn-danger m-2">
+                Borrar
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- En esta sección accedemos al formulario para actualizar los datos -->
+    <div class="col-sm-4" [hidden]="hideUpdate">
+      <!-- Utilizamos un "Property binding" para acceder a la propiedad de "hideUpdate"-->
+      <h2>Actualizar Datos:</h2>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="name" class="control-label-sm-2">
+            Nombres
+          </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model2.name"
+              placeholder="Entre un nuevo nombre">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="surname" class="control-label-sm-2">
+            Apellidos
+          </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="surname" name="surname" [(ngModel)]="model2.surname"
+              placeholder="Entre un nuevo apellido">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="control-label-sm-2">
+            Email
+          </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="email" name="email" [(ngModel)]="model2.email"
+              placeholder="Entre un nuevo email">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-10 col-sm-offset-2">
+            <button type="submit" class="btn btn-success m-2" (click)="updateEmployee()" [hidden]="hideUpdate">
+              Grabar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

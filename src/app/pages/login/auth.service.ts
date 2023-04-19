@@ -7,11 +7,11 @@ export class AuthService {
     'https://quintadb.com/search/bWWO4nW5znWR1Dm3CAbH4Z.json?rest_api_key=aKh055W4PjWR8ek8ovaSkd&entity_id=bdW6_cS8naEOoTW6ddJZCy&view=dcPmkDW4HjWRmomSogW7G-';
   private apiKey = 'TU_CLAVE_API';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   buscarUsuario() {
     const requestObject = {
-      search: [[{ a: 'dcKar6B8nmykBcSmoeogqH', b: 'jose@gmail.com', o: 'is' }]],
+      search: [[{ a: 'dcKar6B8nmykBcSmoeogqH', b: 'dummyUser@gmail.com', o: 'is' }]],
     };
     return this.http.post(this.apiUrl, requestObject);
   }

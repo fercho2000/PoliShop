@@ -1,28 +1,38 @@
+import { SharedModule } from './shared/shared.module';
+import { AuthService } from './pages/login/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
-import { HomeContentComponent } from './pages/home/home-content.component';
-import { LoginComponent } from './pages/login/login.component';
+import { ProveedoresComponent } from './pages/admin/proveedores/proveedores.component';
+import { ClientesComponent } from './pages/admin/clientes/clientes.component';
+import { ProductosComponent } from './pages/admin/productos/productos.component';
 import { DetalleProductoComponent } from './pages/detalle-producto/detalle-producto.component';
-import { AuthService } from './pages/login/auth.service';
+import { HomeContentComponent } from './pages/home/home-content.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// Declaramos todos los componentes que creamos
 @NgModule({
   declarations: [
     AppComponent,
-    HomeContentComponent,
     LoginComponent,
-    DetalleProductoComponent
+    HomeContentComponent,
+    DetalleProductoComponent,
+    ProveedoresComponent,
+    ClientesComponent,
+    ProductosComponent
   ],
+
+  // Importamos los módulos creados y el módulo "FormsModule"
   imports: [
-    HttpClientModule,
-    AppRoutingModule,
-    BrowserModule,
     SharedModule,
-    NgbModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
