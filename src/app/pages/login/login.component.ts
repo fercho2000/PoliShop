@@ -103,9 +103,11 @@ export class LoginComponent implements OnInit {
       'localStorage.getItem(SESION_USUARIO) ',
       localStorage.getItem(SESION_USUARIO)
     );
-    if (localStorage.getItem(SESION_USUARIO)) {
+    const infoUser= localStorage.getItem(SESION_USUARIO);
+    if (infoUser) {
       this.habilitarUsuario = true;
       this.tituloSesion='Información de Usuario';
+      this.informacionUsuario= JSON.parse(infoUser);
     } else {
       this.habilitarUsuario = false;
       this.tituloSesion='Inicio De Sesión';
