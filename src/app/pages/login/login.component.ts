@@ -15,7 +15,6 @@ const NOMBRE_CAMPO_EDAD = 'ddSCkltHrosykkW7bZW7LQ';
 const NOMBRE_CAMPO_FECHA_NAC = 'dcHIDDW4TdNOounCojE8o_';
 const NOMBRE_CAMPO_GENERO = 'bigMRcH8nab4onW4zhiCo0';
 
-
 const MENSAJE_VALIDACION =
   ' el correo o contraseña no son correctos, revisa nuevamente...';
 @Component({
@@ -47,11 +46,11 @@ export class LoginComponent implements OnInit {
 
     this.habilitarUsuario = false;
     this.mensajeValidacion = '';
-    this.tituloSesion='Inicio De Sesión';
+    this.tituloSesion = 'Inicio De Sesión';
   }
 
   ngOnInit(): void {
-    this. habilitarSesion();
+    this.habilitarSesion();
   }
   get control() {
     return this.loginForm.controls;
@@ -83,9 +82,9 @@ export class LoginComponent implements OnInit {
       rol: record?.values[NOMBRE_ROL],
       correo: record?.values[NOMBRE_CORREO],
       direccion: record?.values[NOMBRE_DIRECCION],
-      edad:  record?.values[NOMBRE_CAMPO_EDAD],
-      fechaNacimiento:  record?.values[NOMBRE_CAMPO_FECHA_NAC],
-      genero:  record?.values[NOMBRE_CAMPO_GENERO]
+      edad: record?.values[NOMBRE_CAMPO_EDAD],
+      fechaNacimiento: record?.values[NOMBRE_CAMPO_FECHA_NAC],
+      genero: record?.values[NOMBRE_CAMPO_GENERO],
     };
 
     localStorage.setItem(
@@ -99,18 +98,22 @@ export class LoginComponent implements OnInit {
   }
 
   habilitarSesion() {
-    console.log(
-      'localStorage.getItem(SESION_USUARIO) ',
-      localStorage.getItem(SESION_USUARIO)
-    );
-    const infoUser= localStorage.getItem(SESION_USUARIO);
+    const infoUser = localStorage.getItem(SESION_USUARIO);
     if (infoUser) {
       this.habilitarUsuario = true;
-      this.tituloSesion='Información de Usuario';
-      this.informacionUsuario= JSON.parse(infoUser);
+      this.tituloSesion = 'Información de Usuario';
+      this.informacionUsuario = JSON.parse(infoUser);
     } else {
-      this.habilitarUsuario = false;
-      this.tituloSesion='Inicio De Sesión';
+      this.estadoNormalLogin();
     }
+  }
+  cerrarSesion() {
+    localStorage.clear();
+    this.estadoNormalLogin();
+  }
+
+  estadoNormalLogin() {
+    this.habilitarUsuario = false;
+    this.tituloSesion = 'Inicio De Sesión';
   }
 }
