@@ -12,6 +12,7 @@ import { HomeContentComponent } from './pages/home/home-content.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ListaProductosComponent } from './pages/lista-productos/lista-productos.component';
 
 // Declaramos todos los componentes que creamos
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     DetalleProductoComponent,
     ProveedoresComponent,
     ClientesComponent,
-    ProductosComponent
+    ProductosComponent,
+    ListaProductosComponent
   ],
 
   // Importamos los módulos creados y el módulo "FormsModule"
