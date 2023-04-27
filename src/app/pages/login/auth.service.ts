@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UserData } from './modelos/user-data';
+
+const EMAIL = 'dcKar6B8nmykBcSmoeogqH';
+const TIPO_FILTRO = 'is';
 
 @Injectable()
 export class AuthService {
@@ -8,12 +12,12 @@ export class AuthService {
   private apiKey = 'TU_CLAVE_API';
 
   constructor(private http: HttpClient) {}
-
-  buscarUsuario() {
+  // tdo agregar validacion de igualacion password
+  buscarUsuario(bodyRquest: any) {
     const requestObject = {
-      search: [[{ a: 'dcKar6B8nmykBcSmoeogqH', b: 'dummyUser@gmail.com', o: 'is' }]],
+      search: [[{ a: EMAIL, b: bodyRquest.email, o: TIPO_FILTRO }]],
     };
-    return this.http.post(this.apiUrl, requestObject);
+    return this.http.post<UserData>(this.apiUrl, requestObject);
   }
   // Portal del cliente
   // Nombre clave	Nombre	Clave API	Creado
