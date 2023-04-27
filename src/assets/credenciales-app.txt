@@ -1,0 +1,8 @@
+CREDENCIALES DE LOGIN:
+
+ADMIN:
+EMAIL: dummyUser@gmail.com
+PASS: dummyUser123
+
+CLIENTE: jose@gmail.com	
+EMAIL: jose123
