@@ -1,7 +1,31 @@
-<div class="container-fluid" *ngIf="!habilitarUsuario">
-  <div class="card-header text-dark text-center">
-    <h3 class="fw-bold mb-0">Inicio De Sesión</h3>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid px-5">
+      <!--? LOGO -->
+      <div class="d-flex justify-content-start">
+          <a class="navbar-brand" href="/home"><img class="col-3
+          " width="70px" src="/assets/images/PoliShop.png" alt="PoliShop"></a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav w-100">
+            <!--? SEARCH -->
+            <form class="d-flex col-7 m-auto justify-content-center" role="search">
+              <h3 class="fw-bold mb-0">{{ this.tituloSesion}}</h3>
+            </form>
+            <!--? ICONS -->
+            <div class="d-flex justify-content-evenly col-2">
+                <a class="nav-link" routerLink="/login"><i class="bi bi-person-fill icon"></i></a>
+                <a class="nav-link" routerLink="/detalle-producto"><i class="bi bi-cart4 icon"></i></a>
+            </div>
+        </div>
+    </div>
   </div>
+</nav>
+<div class="container-fluid" *ngIf="!habilitarUsuario">
+
   <div class="row justify-content-center mt-5" style="margin-top: 4rem">
     <div class="col-lg-8 col-md-8 col-sm-8 col-8">
       <div style="margin-top: 2rem">
@@ -100,7 +124,7 @@
 <div class="container" *ngIf="habilitarUsuario">
   <div class="row">
     <div class="col-md-12">
-      <h3 style="text-align: center;">Información de Usuario</h3>
+      <!-- <h3 style="text-align: center;">Información de Usuario</h3> -->
 
       <section class="section about-section gray-bg" id="about">
         <div class="container">

@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
   datosUsuario: UserData;
   informacionUsuario: InformacionUsuario;
   habilitarUsuario: boolean;
+  tituloSesion: string;
+
   mensajeValidacion: string;
   constructor(private authService: AuthService) {
     this.datosUsuario = {
@@ -45,9 +47,12 @@ export class LoginComponent implements OnInit {
 
     this.habilitarUsuario = false;
     this.mensajeValidacion = '';
+    this.tituloSesion='Inicio De Sesión';
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this. habilitarSesion();
+  }
   get control() {
     return this.loginForm.controls;
   }
@@ -100,8 +105,10 @@ export class LoginComponent implements OnInit {
     );
     if (localStorage.getItem(SESION_USUARIO)) {
       this.habilitarUsuario = true;
+      this.tituloSesion='Información de Usuario';
     } else {
       this.habilitarUsuario = false;
+      this.tituloSesion='Inicio De Sesión';
     }
   }
 }
