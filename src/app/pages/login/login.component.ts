@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './auth.service';
-import { UserData } from './modelos/user-data';
 import { InformacionUsuario } from './modelos/informacion-usuario';
+import { UserData } from './modelos/user-data';
 
 const NOMBRE_CONTRASENIA = 'caxY5bb25cR4oKec3dRSon';
 const NOMBRE_PERSONA = 'aFWOJcQWzcW5VdMmk1W4OH';
@@ -10,7 +10,8 @@ const NOMBRE_TEL = 'cAn8kHW59cMik6WQZdQ8oK';
 const NOMBRE_ROL = 'dcHmkOWPfdViRdRXf7WQPT';
 const NOMBRE_CORREO = 'dcKar6B8nmykBcSmoeogqH';
 const NOMBRE_DIRECCION = 'ddN8k-fsDmplFcKfFcS1XE';
-
+const MENSAJE_VALIDACION =
+  ' el correo o contraseña no son correctos, revisa nuevamente...';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,6 +24,8 @@ export class LoginComponent implements OnInit {
   });
   datosUsuario: UserData;
   informacionUsuario: InformacionUsuario;
+  validacionContrasenia: boolean;
+  mensajeValidacion: string;
   constructor(private authService: AuthService) {
     this.datosUsuario = {
       records: [
@@ -39,6 +42,9 @@ export class LoginComponent implements OnInit {
       correo: '',
       direccion: '',
     };
+
+    this.validacionContrasenia = false;
+    this.mensajeValidacion = '';
   }
 
   ngOnInit(): void {}
@@ -48,29 +54,28 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-
       this.authService.buscarUsuario(this.loginForm.value).subscribe((data) => {
         this.datosUsuario = data;
-        if (this.datosUsuario?.records.length > 0) {
-          const record = this.datosUsuario?.records.shift();
-
-          console.log('data que llega ', record);
-          console.log(record?.values[NOMBRE_CONTRASENIA]);
-
- 
+        const record = this.datosUsuario?.records?.shift();
+        this.mensajeValidacion =
+          record?.values[NOMBRE_CONTRASENIA] === this.loginForm.value.password
+            ? ''
+            : MENSAJE_VALIDACION;
+        if (!this.mensajeValidacion) {
+          this.organizarInformacionUsuario(record);
         }
       });
     }
   }
 
-  organizarInformacionUsuario(record: any){
+  organizarInformacionUsuario(record: any) {
     this.informacionUsuario = {
       nombrePersona: record?.values[NOMBRE_PERSONA],
       telefono: record?.values[NOMBRE_TEL],
       rol: record?.values[NOMBRE_ROL],
       correo: record?.values[NOMBRE_CORREO],
-      direccion: record?.values[NOMBRE_DIRECCION ],
+      direccion: record?.values[NOMBRE_DIRECCION],
     };
+    console.log('this.informacionUsuario :>> ', this.informacionUsuario);
   }
 }

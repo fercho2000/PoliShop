@@ -35,6 +35,11 @@
               </div>
             </div>
           </div>
+          <div class="alert alert-danger" *ngIf="mensajeValidacion">
+            <div style="text-align: center;" >
+             {{mensajeValidacion}}
+            </div>
+          </div>
           <div class="d-flex justify-content-center mb-3">
             <button type="submit" class="btn btn-light btn-lg fw-bold" [disabled]="!loginForm.valid">
               Iniciar Sesión
