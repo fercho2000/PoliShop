@@ -3,13 +3,19 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { InformacionUsuario } from './modelos/informacion-usuario';
 import { UserData } from './modelos/user-data';
-
+const SESION_USUARIO = 'AUTH';
 const NOMBRE_CONTRASENIA = 'caxY5bb25cR4oKec3dRSon';
 const NOMBRE_PERSONA = 'aFWOJcQWzcW5VdMmk1W4OH';
 const NOMBRE_TEL = 'cAn8kHW59cMik6WQZdQ8oK';
 const NOMBRE_ROL = 'dcHmkOWPfdViRdRXf7WQPT';
 const NOMBRE_CORREO = 'dcKar6B8nmykBcSmoeogqH';
 const NOMBRE_DIRECCION = 'ddN8k-fsDmplFcKfFcS1XE';
+const NOMBRE_CAMPO_AVATAR = 'bKW53cTCndW7ddOmkii8oR';
+const NOMBRE_CAMPO_EDAD = 'ddSCkltHrosykkW7bZW7LQ';
+const NOMBRE_CAMPO_FECHA_NAC = 'dcHIDDW4TdNOounCojE8o_';
+const NOMBRE_CAMPO_GENERO = 'bigMRcH8nab4onW4zhiCo0';
+
+
 const MENSAJE_VALIDACION =
   ' el correo o contraseña no son correctos, revisa nuevamente...';
 @Component({
@@ -24,7 +30,7 @@ export class LoginComponent implements OnInit {
   });
   datosUsuario: UserData;
   informacionUsuario: InformacionUsuario;
-  validacionContrasenia: boolean;
+  habilitarUsuario: boolean;
   mensajeValidacion: string;
   constructor(private authService: AuthService) {
     this.datosUsuario = {
@@ -35,15 +41,9 @@ export class LoginComponent implements OnInit {
       ],
     };
 
-    this.informacionUsuario = {
-      nombrePersona: '',
-      telefono: '',
-      rol: '',
-      correo: '',
-      direccion: '',
-    };
+    this.informacionUsuario = {};
 
-    this.validacionContrasenia = false;
+    this.habilitarUsuario = false;
     this.mensajeValidacion = '';
   }
 
@@ -58,11 +58,13 @@ export class LoginComponent implements OnInit {
         this.datosUsuario = data;
         const record = this.datosUsuario?.records?.shift();
         this.mensajeValidacion =
-          record?.values[NOMBRE_CONTRASENIA] === this.loginForm.value.password
+          record?.values[NOMBRE_CONTRASENIA] ===
+          this.codificacionContrasenia(this.loginForm.value.password)
             ? ''
             : MENSAJE_VALIDACION;
         if (!this.mensajeValidacion) {
           this.organizarInformacionUsuario(record);
+          this.habilitarSesion();
         }
       });
     }
@@ -70,12 +72,36 @@ export class LoginComponent implements OnInit {
 
   organizarInformacionUsuario(record: any) {
     this.informacionUsuario = {
+      urlAvatar: record?.values[NOMBRE_CAMPO_AVATAR],
       nombrePersona: record?.values[NOMBRE_PERSONA],
       telefono: record?.values[NOMBRE_TEL],
       rol: record?.values[NOMBRE_ROL],
       correo: record?.values[NOMBRE_CORREO],
       direccion: record?.values[NOMBRE_DIRECCION],
+      edad:  record?.values[NOMBRE_CAMPO_EDAD],
+      fechaNacimiento:  record?.values[NOMBRE_CAMPO_FECHA_NAC],
+      genero:  record?.values[NOMBRE_CAMPO_GENERO]
     };
-    console.log('this.informacionUsuario :>> ', this.informacionUsuario);
+
+    localStorage.setItem(
+      SESION_USUARIO,
+      JSON.stringify(this.informacionUsuario)
+    );
+  }
+
+  codificacionContrasenia(valor: any): string {
+    return btoa(valor);
+  }
+
+  habilitarSesion() {
+    console.log(
+      'localStorage.getItem(SESION_USUARIO) ',
+      localStorage.getItem(SESION_USUARIO)
+    );
+    if (localStorage.getItem(SESION_USUARIO)) {
+      this.habilitarUsuario = true;
+    } else {
+      this.habilitarUsuario = false;
+    }
   }
 }
