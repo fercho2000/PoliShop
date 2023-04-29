@@ -3,14 +3,15 @@
 
 
 <main class="col-12 d-flex justify-content-center container my-5 h-100">
-    <div class="card col-2 shadow-sm border-1 m-3" *ngFor="let producto of listadoProductos">
-        <img class="card-img-top img-product w-75 mx-auto my-3" src="../../../assets/img/productos/img.png">
+    <a class="card col-2 shadow-sm border-1 m-3" *ngFor="let producto of listadoProductos"
+        (click)="onClickProducto(producto.values.ddOrDYWQrcVOoqamoIg8kQ)">
+        <img class="card-img-top img-product w-75 mx-auto my-3" [src]="producto.values.dcIxBcI8jkeBDWCmoxmeKS">
         <div class="card-body d-flex row justify-content-center align-content-center">
             <h3 class="card-title text-center">{{producto.values.ddOrDYWQrcVOoqamoIg8kQ}}</h3>
             <h4 class="text-center">{{producto.values.c7WQ3cHGHgsAZcRe7dJCod}}</h4>
             <button class="btn btn-primary w-50">Agregar <i class="bi-cart"></i></button>
         </div>
-    </div>
+    </a>
 
 </main>
 

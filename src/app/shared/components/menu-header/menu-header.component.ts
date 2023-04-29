@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductosServiceService } from 'src/app/pages/lista-productos/productos-service.service';
 
 @Component({
   selector: 'app-menu-header',

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ProductosServiceService } from './productos-service.service';
+import { DetalleProductoComponent } from '../detalle-producto/detalle-producto.component';
 
 
 const NOMBRE_PRODUCTO: String = 'bbmmoQaSjfWOldQmoYWOiC';
@@ -11,7 +12,7 @@ const CATEGORIA: String = 'dcM0K7ub5cNPVdHGBdQmkQ';
 @Component({
   selector: 'app-lista-productos',
   templateUrl: './lista-productos.component.html',
-  styleUrls: ['./lista-productos.component.css']
+  styleUrls: ['./lista-productos.component.css', '../../app.component.css']
 })
 export class ListaProductosComponent implements OnInit {
 
@@ -19,15 +20,15 @@ export class ListaProductosComponent implements OnInit {
   categoria: any;
 
 
-  constructor(private router: ActivatedRoute, private productosService: ProductosServiceService) {
+  constructor(private router: ActivatedRoute, private productosService: ProductosServiceService, private route: Router) {
 
   }
 
   ngOnInit(): void {
 
     this.filtrarProdcutos();
+    console.log(this.listadoProductos)
   }
-
 
 
   filtrarProdcutos() {
@@ -39,8 +40,11 @@ export class ListaProductosComponent implements OnInit {
         this.listadoProductos = data.records;
         console.log(this.listadoProductos)
       });
-      console.log(this.categoria)
     })
+  }
+
+  onClickProducto(nombre: string) {
+    this.route.navigate(['/detalle', nombre])
 
   }
 }
