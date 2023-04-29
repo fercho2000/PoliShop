@@ -1,10 +1,10 @@
 //Los comentarios del componente "Clientes" aplican igual
 
-
 import { Component } from '@angular/core';
+import { Providers } from './proveedores';
+
 
 @Component({
-  // selector: 'proveed-root',
   selector: 'app-providers',
   templateUrl: './proveedores.component.html',
   styleUrls: ['./proveedores.component.css']
@@ -14,21 +14,22 @@ export class ProveedoresComponent {
   title: string = 'poliShop_Proveedores';
   msg: string = '';
 
-  providers = [
-    { 'name': 'Legumbres Cano', 'category': 'Legumbres', 'email': 'lcano@email.com' },
-    { 'name': 'American Fruits', 'category': 'Frutas', 'email': 'afruit@email.com' },
-    { 'name': 'Red Pantry', 'category': 'Carnes', 'email': 'redp@email.com' },
-    { 'name': 'Bodega Toscana', 'category': 'Bebidas alcoholicas', 'email': 'btosc@email.com' },
-  ];
+  providers: Providers[] = []; 
 
   model: any = {};
   model2: any = {};
   myValue!: number;
   hideUpdate: boolean = true;
 
+  constructor(){
+    this.providers = JSON.parse(localStorage.getItem("providers") || "[]"); 
+  }
+
 
   addProviders(): void {
     this.providers.push(this.model);
+    localStorage.setItem("providers", JSON.stringify(this.providers));
+    this.model = {}; 
     this.msg = 'Campo agregado';
   }
 
@@ -36,6 +37,7 @@ export class ProveedoresComponent {
     let answer = confirm('¿Esta seguro de eliminarlo?');
     if (answer) {
       this.providers.splice(i, 1);
+      localStorage.setItem("providers", JSON.stringify(this.providers));
       this.msg = 'Campo eliminado';
     }
   }
@@ -46,6 +48,7 @@ export class ProveedoresComponent {
       if (i == j) {
         this.providers[i] = this.model2;
         this.model2 = {};
+        localStorage.setItem("providers", JSON.stringify(this.providers));
         this.msg = 'Campo actualizado'
         this.hideUpdate = true;
       }

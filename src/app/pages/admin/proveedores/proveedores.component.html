@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 
 <!-- Los comentarios del componente "Clientes" aplican igual-->
 <div class="container app bg-secondary bg-opacity-10">
@@ -11,10 +12,15 @@
     <div class="col-sm-4 alert alert-primary alert-dismissible  fade show" *ngIf = "msg">
         <p href=" #"
          class="close"
-         style="text-decoration: none;" 
-         (click)="closeAlert()">
+         style="text-decoration: none;" >
          {{msg}} 
       </p>
+      <button type="button"
+                  class="btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                  (click)="closeAlert()">
+          </button>
     </div>
   </div>
 
