@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './auth.service';
-import { InformacionUsuario } from './modelos/informacion-usuario';
-import { UserData } from './modelos/user-data';
+import { InformacionUsuario } from '../../shared/modelos/informacion-usuario';
+import { UserData } from '../../shared/modelos/user-data';
+
 const SESION_USUARIO = 'AUTH';
 const NOMBRE_CONTRASENIA = 'caxY5bb25cR4oKec3dRSon';
 const NOMBRE_PERSONA = 'aFWOJcQWzcW5VdMmk1W4OH';
@@ -15,8 +16,7 @@ const NOMBRE_CAMPO_EDAD = 'ddSCkltHrosykkW7bZW7LQ';
 const NOMBRE_CAMPO_FECHA_NAC = 'dcHIDDW4TdNOounCojE8o_';
 const NOMBRE_CAMPO_GENERO = 'bigMRcH8nab4onW4zhiCo0';
 
-const MENSAJE_VALIDACION =
-  ' el correo o contraseña no son correctos, revisa nuevamente...';
+const MENSAJE_VALIDACION =' el correo o contraseña no son correctos, revisa nuevamente...';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
   });
+  
   datosUsuario: UserData;
   informacionUsuario: InformacionUsuario;
   habilitarUsuario: boolean;
@@ -43,7 +44,6 @@ export class LoginComponent implements OnInit {
     };
 
     this.informacionUsuario = {};
-
     this.habilitarUsuario = false;
     this.mensajeValidacion = '';
     this.tituloSesion = 'Inicio De Sesión';
@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
         const record = this.datosUsuario?.records?.shift();
         this.mensajeValidacion =
           record?.values[NOMBRE_CONTRASENIA] ===
-          this.codificacionContrasenia(this.loginForm.value.password)
+            this.codificacionContrasenia(this.loginForm.value.password)
             ? ''
             : MENSAJE_VALIDACION;
         if (!this.mensajeValidacion) {
